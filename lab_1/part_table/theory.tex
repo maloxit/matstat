@@ -1,0 +1,44 @@
+\subsection{Вариационный ряд}
+\label{subsec:theory_var_seq}
+\textit{Вариационный ряд}\ - последовательность элементов выборки, расположенных в неубывающем порядке. Одинаковые элементы повторяются.
+
+\subsection{Выборочные числовые характеристики}
+\subsubsection{Характеристики положения}
+	\begin{itemize}
+	    \item Выборочное среднее
+	    \begin{equation}
+	        \overline{x} = \frac{1}{n}\sum_{i=1}^{n}{x_i}
+	    \end{equation}
+	    \item Выборочная медиана
+	    \begin{equation}
+	        med x = \begin{cases}
+	            x_{(l+1)} &\text{, $ n=2l+1$}\\
+				\frac{x_{(l)} + x_{(l+1)}}{2} &\text{, $ n=2l$}
+	        \end{cases}
+	    \end{equation}
+	    \item Полусумма экстремальных выборочных элементов
+	    \begin{equation}
+	        z_R = \frac{x_{(1)} + x_{(n)}}{2}
+	    \end{equation}
+	    \item Полусумма квартилей
+	    \newline Выборочная квартиль $z_p$ порядка $p$ определяется формулой:
+	    \begin{equation}
+	        z_p = \begin{cases}
+	            x_{([np]+1)} &\text{, $ np$ дробное}\\
+				x_{(np)} &\text{, $ np$ целое}
+	        \end{cases}
+	    \end{equation}
+	    \newline Полусумма квартилей
+	    \begin{equation}
+	       z_Q = \frac{z_{1/4} + z_{3/4}}{2}
+	    \end{equation}
+	    \begin{equation}
+	        z_{tr} =\frac{1}{n-2r}\sum_{i=r+1}^{n-r}{x_{(i)}},
+	        r\approx\frac{n}{4}
+	    \end{equation}
+	\end{itemize}
+	\subsubsection{Характеристики рассеяния}
+	\noindent Выборочная дисперсия
+	\begin{equation}
+		D = \frac{1}{n}\sum_{i=1}^{n}{(x_i-\overline{x})^2}
+	\end{equation}

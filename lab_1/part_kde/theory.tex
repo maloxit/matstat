@@ -1,0 +1,24 @@
+\subsection{Оценки плотности вероятности}
+	\subsubsection{Определение}
+	\noindent Оценкой плотности вероятности $f(x)$ называется функция $\widehat{f}(x)$, построенная на основе выборки, приближённо равная $f(x)$
+    \begin{equation}
+        \widehat{f}(x)\approx f(x).
+    \end{equation}
+	\subsubsection{Ядерные оценки}
+	\noindent Представим оценки в виде суммы с числом слагаемых, равным объёму выборки:\begin{equation}
+        \widehat{f}_n(x)=\frac{1}{n h_n}\sum_{i=1}^n K\left(\frac{x-x_i}{h_n}\right).
+    \end{equation}
+    Здесь фукнция $K(u)$, называемая ядерной (ядром), непрерывна и является плотностью вероятности, $x_1,...,x_n$ $-$ элементы выборки, ${h_n}$ — любая последовательность положительных чисел, обладающая свойствами
+    \begin{equation}
+        h_n\xrightarrow[n\to\infty]{}0;\;\;\;\frac{h_n}{n^-1} \xrightarrow[n\to\infty]{}\infty.
+    \end{equation}
+    Такие оценки называются непрерывными ядерными.\\\\
+    Гауссово (нормальное) ядро
+    \begin{equation}
+        K(u)=\frac{1}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}.
+    \end{equation}
+    Правило Сильвермана
+    \begin{equation}
+        h_n=\left(\frac{4\hat{\sigma}^5}{3n}\right)^{1/5}\approx1.06\hat{\sigma}n^{-1/5},
+    \end{equation}
+    где $\hat{\sigma}$ - выборочное стандартное отклонение.

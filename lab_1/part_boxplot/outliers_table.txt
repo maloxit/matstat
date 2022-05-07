@@ -1,0 +1,10 @@
+normal;20;0.02475
+normal;100;0.01017
+cauchy;20;0.15155
+cauchy;100;0.15312
+laplace;20;0.0768
+laplace;100;0.06582
+poisson;20;0.02435
+poisson;100;0.01077
+uniform;20;0.00165
+uniform;100;0.0

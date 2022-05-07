@@ -1,0 +1,119 @@
+\documentclass[14pt,a4paper,article]{ncc}
+\usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot{}
+
+\usepackage{listings}
+
+\setlength{\headheight}{18pt}
+
+\begin{document}
+% Title page 
+\begin{titlepage}
+    \begin{center}
+        \textsc{
+            Санкт-Петербургский политехнический университет имени Петра Великого \\[5mm]
+            Институт прикладной математики и механики\\[2mm]
+            Высшая школа прикладной математики и физики            
+        }   
+        \vfill
+        \textbf{\large
+            Математическая статистика\\
+            Отчёт по лабораторным работам №1-4 \\[3mm]
+        }                
+    \end{center}
+
+    \vfill
+    \hfill
+    \begin{minipage}{0.5\textwidth}
+        Выполнил: \\[2mm]   
+		Студент: Габдушев Рушан \\
+		Группа: 5030102/90201\\
+    \end{minipage}
+
+	\hfill
+	\begin{minipage}{0.5\textwidth}
+		Принял: \\[2mm]
+		к. ф.-м. н., доцент \\   
+		Баженов Александр Николаевич
+	\end{minipage}
+
+    \vfill
+    \begin{center}
+        \theyear\ г.
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+\section{Постановка задачи}
+\label{sec:problem}
+\input{common/problem.tex}
+\begin{enumerate}
+\input{part_hist/problem.tex}
+\input{part_table/problem.tex}
+\input{part_boxplot/problem.tex}
+\input{part_edf/problem.tex}
+\input{part_kde/problem.tex}
+\end{enumerate}
+\newpage
+
+\section{Теория}
+\label{sec:theory}
+\input{common/theory.tex}
+\input{part_hist/theory.tex}
+\input{part_table/theory.tex}
+\input{part_boxplot/theory.tex}
+\input{part_edf/theory.tex}
+\input{part_kde/theory.tex}
+\newpage
+
+\section{Реализация}
+\label{sec:impl}
+\input{common/impl.tex}
+\newpage
+
+\section{Результаты}
+\label{sec:result}
+\input{part_hist/result.tex}
+\input{part_table/result.tex}
+\input{part_boxplot/result.tex}
+\input{part_edf/result.tex}
+\input{part_kde/result.tex}
+\newpage
+
+\section{Обсуждение}
+\label{sec:discuss}
+\input{part_hist/discuss.tex}
+\input{part_table/discuss.tex}
+\input{part_boxplot/discuss.tex}
+\input{part_edf/discuss.tex}
+\input{part_kde/discuss.tex}
+\newpage
+
+\section{Ссылки на библиотеки}
+\label{sec:liter}
+\input{common/liter.tex}
+\newpage
+
+\section{Ссылки на репозиторий}
+\label{sec:rep}
+\input{common/rep.tex}
+
+\end{document}
