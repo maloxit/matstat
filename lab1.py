@@ -316,3 +316,7 @@ def run_lab1():
     pyplt.close('all')
     lab_1_part_kde()
     pyplt.close('all')
+
+
+if __name__ == '__lab1__':
+    run_lab1()
