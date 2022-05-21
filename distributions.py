@@ -4,6 +4,7 @@ from scipy.stats import cauchy
 from scipy.stats import laplace
 from scipy.stats import poisson
 from scipy.stats import uniform
+from scipy.stats import multivariate_normal
 
 norm_loc = 0
 norm_scale = 1
@@ -81,7 +82,7 @@ def uniform_density_func(x, loc=uniform_loc, scale=uniform_scale):
     return uniform.pdf(x, loc=loc, scale=scale)
 
 
-dist_list = {
+dist_1d_list = {
     'norm':
         {
             'name': 'normal',
@@ -118,3 +119,12 @@ dist_list = {
             'density_func': uniform_density_func
         }
 }
+
+
+def get_normal_2d_sample(size, r, loc=(0., 0.), scale=(1., 1.)):
+    return multivariate_normal.rvs(loc, [[scale[0], r], [r, scale[1]]], size=size)
+
+
+def get_mix_normal_2d_sample(size):
+    return 0.9 * multivariate_normal.rvs([0, 0], [[1, 0.9], [0.9, 1]], size) + \
+           0.1 * multivariate_normal.rvs([0, 0], [[10, -0.9], [-0.9, 10]], size)

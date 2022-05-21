@@ -1,0 +1,74 @@
+\subsection{Простая линейная регрессия}
+	\subsubsection{Модель простой линейной регрессии}
+	Регрессионную модель описания данных называют простой линейной регрессией, если
+	\begin{equation}
+	    y_{i} = \beta_{0} + \beta_{1}x_{i} + \varepsilon_{i},  i = 1..n
+	    \label{eq:y_i}
+	\end{equation}
+
+	\noindent где $x_1,...,x_n - $ заданные числа (значения фактора);
+	$y_1,...y_n - $ наблюдаемые значения отклика;
+	$\varepsilon_1,...,\varepsilon_n - $ независимые, нормально распределенные $N(0, \sigma)$ с нулевым математическим ожиданием и одинаковой (неизвестной) дисперсией случайные величины (ненаблюдаемые);
+	$\beta_0, \beta_1 - $ неизвестные параметры, подлежащие оцениванию.
+
+
+	\subsubsection{Метод наименьших квадратов}
+    Метод наименьших квадратов (МНК):
+	\begin{equation}
+	    Q(\beta_{0}, \beta_{1}) = \sum_{i=1}^{n}{\varepsilon_{i}^{2}} =
+	    \sum_{i=1}^{n}{(y_{i} - \beta_{0} - \beta_{1}x_{i})^{2}}\rightarrow \min_{\beta_{0}, \beta_{1}}
+	    \label{eq:q_beta}
+	\end{equation}
+
+
+	\subsubsection{Расчётные формулы для МНК-оценок}
+	\noindent МНК-оценки параметров $\hat{\beta_0}, \hat{\beta_1}$:
+	\begin{equation}
+	    \hat{\beta_{1}} = \frac{\bar{xy} - \bar{x} \cdot \bar{y}}{\bar{x^{2}} - (\bar{x})^{2}}
+	    \label{eq:beta_1_new}
+	\end{equation}
+	\begin{equation}
+	    \hat{\beta_{0}} = \bar{y} - \bar{x}\hat{\beta_{1}}
+	    \label{eq:beta_0_new}
+	\end{equation}
+
+
+    \subsection{Робастные оценки коэффициентов линейной регрессии}
+    Метода наименьших модулей:
+    \begin{equation}
+	    \sum_{i=1}^{n}{|y_{i} - \beta_{0} - \beta_{1}x_{i}|}\rightarrow \min_{\beta_{0}, \beta_{1}}
+	    \label{min_abs}
+	\end{equation}
+    \begin{equation}
+        \hat{\beta_{1}}_{R} = r_{Q}\frac{q^{*}_{y}}{q^{*}_{x}},
+        \label{b_1R}
+    \end{equation}
+    \begin{equation}
+        \hat{\beta_{0}}_{R} = med y - \hat{\beta_{1}}_{R} med x,
+        \label{b_0R}
+    \end{equation}
+    \begin{equation}
+        r_{Q} = \frac{1}{n}\sum_{i=1}^{n}{sgn(x_{i} - med x)sgn(y_{i} - med y)},
+        \label{r_Q}
+    \end{equation}
+    \begin{multline}
+    \\
+        q^{*}_{y} = \frac{y_{(j)} -y_{(l)}}{k_{q}(n)},~~~
+        q^{*}_{x} = \frac{x_{(j)} - x_{(l)}}{k_{q}(n)}, \\
+        \begin{cases}
+             & [\frac{n}{4}] + 1 \text{ при } \frac{n}{4} \text{ дробном, } \\
+             & \frac{n}{4} \text{ при } \frac{n}{4} \text{ целом. }
+        \end{cases}\\
+        j = n - l + 1\\
+        sgn(z) = \begin{cases}
+                    & 1 \text{ при } z > 0 \\
+                    & 0 \text{ при } z = 0 \\
+                    & -1 \text{ при } z < 0
+                 \end{cases}\\
+        \label{q*}
+    \end{multline}
+    Уравнение регрессии здесь имеет вид
+    \begin{equation}
+        y = \hat{\beta_{0}}_{R} +  \hat{\beta_{1}}_{R}x
+        \label{y}
+    \end{equation}
