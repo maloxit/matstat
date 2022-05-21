@@ -347,17 +347,29 @@ def task4_asymp(x_set: list, n_set: list):
     return m_all, s_all
 
 
-def draw_result(x_set: list, m_all: float, s_all: list):
+def draw_result(x_set: list, m_all, s_all):
     fig, (ax1, ax2, ax3, ax4) = pyplt.subplots(1, 4, figsize=(15, 5), gridspec_kw={'left': 0.05, 'right': 0.95 })
 
     # draw hystograms
     ax1.set_ylim(0, 1)
     hist_range = upscale_range_to_sample(x_set[0], [0, 0])
     plot_sample_hist(ax1, hist_range, x_set[0], label='N(0, 1) hyst n=20')
+    m_max = max(m_all[0][0])
+    m_min = min(m_all[0][0])
+    s_max = max(s_all[0][0])
+    sigma_range = [m_min - s_max, m_max + s_max]
+    ax1.plot([m_min, m_min, m_max, m_max], [0.0, 0.7, 0.7, 0.0], 'r', label='$[m_{min}, m_{max}]$')
+    ax1.plot([sigma_range[0]] + sigma_range + [sigma_range[-1]], [0.0, 0.4, 0.4, 0.0], 'g', label='$[m_{min} - \\sigma_{max}, m_{max} + \\sigma_{max}]$')
     ax1.legend(loc='best', frameon=True)
     ax2.set_ylim(0, 1)
     hist_range = upscale_range_to_sample(x_set[1], [0, 0])
     plot_sample_hist(ax2, hist_range, x_set[1], label='N(0, 1) hyst n=100')
+    m_max = max(m_all[0][1])
+    m_min = min(m_all[0][1])
+    s_max = max(s_all[0][1])
+    sigma_range = [m_min - s_max, m_max + s_max]
+    ax2.plot([m_min, m_min, m_max, m_max], [0.0, 0.7, 0.7, 0.0], 'r', label='$[m_{min}, m_{max}]$')
+    ax2.plot([sigma_range[0]] + sigma_range + [sigma_range[-1]], [0.0, 0.4, 0.4, 0.0], 'g', label='$[m_{min} - \\sigma_{max}, m_{max} + \\sigma_{max}]$')
     ax2.legend(loc='best', frameon=True)
 
     # draw intervals of m
