@@ -1,12 +1,12 @@
 \documentclass[14pt,a4paper,article]{ncc}
 \usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
-\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 \usepackage[T2A]{fontenc}
-\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
 \usepackage{indentfirst}
 \usepackage{hyperref}
 \usepackage{graphicx}
-\usepackage{amsmath}
 \usepackage{float}
 
 \usepackage{fancyhdr}
@@ -68,9 +68,9 @@
 \begin{enumerate}
     \item\input{part_correlation_coefficient/problem.tex} % DONE
     \item\input{part_scattering_ellipse/problem.tex} % DONE
-    \item\input{part_linear_regression/problem.tex}
-    \item\input{part_least_squares/problem.tex}
-    \item\input{part_asymp_normal_estimates/problem.tex}
+    \item\input{part_linear_regression/problem.tex} % DONE
+    \item\input{part_least_squares/problem.tex} % DONE
+    \item\input{part_asymp_normal_estimates/problem.tex} % DONE
 % Problem items HERE
 \end{enumerate}
 \newpage
@@ -78,18 +78,19 @@
 \section{Теория}
 \label{sec:theory}
 % Theory introduction HERE
-\input{theory.tex}
+\input{theory.tex} % DONE
 % Theory subsections HERE
-\input{part_correlation_coefficient/theory.tex}
-\input{part_scattering_ellipse/theory.tex}
-\input{part_linear_regression/theory.tex}
-\input{part_least_squares/theory.tex}
-\input{part_asymp_normal_estimates/theory.tex}
+\input{part_correlation_coefficient/theory.tex} % DONE
+\input{part_scattering_ellipse/theory.tex} % DONE
+\input{part_linear_regression/theory.tex} % DONE
+\input{part_least_squares/theory.tex} % DONE
+\input{part_asymp_normal_estimates/theory.tex} % DONE
 \newpage
 
 \section{Реализация}
 \label{sec:impl}
 % Implementation HERE
+\input{impl.tex} % DONE
 \newpage
 
 \section{Результаты}
@@ -117,12 +118,12 @@
 \section{Ссылки на библиотеки}
 \label{sec:liter}
 % Literature HERE
-\input{liter.tex}
+\input{liter.tex} % DONE
 \newpage
 
 \section{Ссылки на репозиторий}
 \label{sec:rep}
 % Ropository links HERE
-\input{rep.tex}
+\input{rep.tex} % DONE
 
 \end{document}

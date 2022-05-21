@@ -3,7 +3,7 @@ import math
 
 import characteristics_utils as ch_utils
 import plot_utils as plt_utils
-from distributions import dist_list
+from distributions import dist_1d_list as dist_list
 
 
 def lab_1_part_hist():
@@ -117,7 +117,7 @@ def lab_1_part_table():
             char_dispersion_list = []
             for j in range(len(stat_characteristics_list)):
                 mean = ch_utils.data_mean(characteristics_table[j])
-                dispersion = ch_utils.data_dispersion(characteristics_table[j])
+                dispersion = ch_utils.data_dispersion(characteristics_table[j], mean=mean)
                 char_mean_list.append(round(mean, 6))
                 char_dispersion_list.append(round(dispersion, 6))
 
@@ -318,5 +318,5 @@ def run_lab1():
     pyplt.close('all')
 
 
-if __name__ == '__lab1__':
+if __name__ == '__main__':
     run_lab1()

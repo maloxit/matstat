@@ -11,12 +11,12 @@ def upscale_range_to_sample(sample: list, min_range):
 
 
 def plot_sample_hist(axis: pyplt.Axes, plot_range: tuple[float, float], sample: list, *, bins_width: float = -1,
-                     bins_count: int = 10):
+                     bins_count: int = 10, **kwargs):
     plot_range_len = plot_range[1] - plot_range[0]
     if bins_width != -1:
         bins_count = math.ceil(plot_range_len / bins_width)
     axis.hist(sample, range=plot_range, bins=bins_count, density=True, edgecolor='blue',
-              facecolor=(0.3, 0.3, 1.0, 0.1), linewidth=0.4)
+              facecolor=(0.3, 0.3, 1.0, 0.1), linewidth=0.4, **kwargs)
 
 
 def plot_func(axis: pyplt.Axes, plot_range: tuple[float, float], points_count: int, func):
